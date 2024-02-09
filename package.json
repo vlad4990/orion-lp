@@ -7,10 +7,14 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "nuxt": "^3.10.1",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   }
