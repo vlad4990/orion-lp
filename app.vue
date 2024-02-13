@@ -6,3 +6,9 @@
     </NuxtLayout>
   </NuxtLayout>
 </template>
+
+<script setup>
+useSeoMeta({
+  title: `orion partners`,
+});
+</script>
