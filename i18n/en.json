@@ -1,0 +1,19 @@
+{
+  "header": {
+    "name": "mur",
+    "links": {
+      "About": "About us",
+      "Affiliates": "Affiliates",
+      "Advertisers": "Advertisers",
+      "Reviews": "Reviews",
+      "Partners": "our Partners"
+    },
+    "buttons": {
+      "auth": "Sign in",
+      "registration": "Registration"
+    }
+  },
+  "start": {
+    "label": "Worldwide<br>Affiliate<br>network&nbsp"
+  }
+}

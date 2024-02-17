@@ -1,28 +1,31 @@
 @import 'variables';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'FiraSansExtraCondensed';
-  src: url('../fonts/FiraSansExtraCondensed-Bold.woff2') format('woff2'),
-  url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('truetype');
+  src:
+    url('../fonts/FiraSansExtraCondensed-Bold.woff2') format('woff2'),
+    url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('../fonts/HelveticaNeueCyr-Bold.woff2') format('woff2'),
-  url('../fonts/HelveticaNeueCyr-Bold.ttf') format('truetype');
+  src:
+    url('../fonts/HelveticaNeueCyr-Bold.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueCyr-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-
 :root {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 24px;
-  line-height: 28px;
   font-weight: 700;
   font-style: normal;
   color: $color-white;
@@ -62,101 +65,125 @@ a {
   text-decoration: unset;
 }
 
-
 .container {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3,
+.h1-huge {
   font-family: FiraSansExtraCondensed;
 }
-h1, h2, h3, p {
+
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
 
-h1 {
+@layer base {
+  @screen mobile {
+  }
+}
+
+.h1 {
   font-size: 270px;
   line-height: 204px;
-
-  &.h1-huge {
-    font-size: 334px;
-    line-height: 260px;
-  }
+  letter-spacing: -0.03em;
+}
+.h1-huge {
+  font-size: 334px;
+  line-height: 260px;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: 186px;
   line-height: 144px;
+  letter-spacing: -0.03em;
 }
 
 h3 {
   font-size: 72px;
   line-height: 68px;
+  letter-spacing: -0.02em;
 }
 
-p {
-  &.p1 {
-    font-size: 32px;
-    line-height: 32px;
-  }
-
-  &.p2 {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  &.p3 {
-    font-size: 24px;
-    line-height: 24px;
-  }
-
-  &.p4-text {
-    font-size: 24px;
-    line-height: 28px;
-  }
+.p1,
+.p2,
+.p3,
+.p3-text {
+  letter-spacing: -0.03em;
+}
+.p1 {
+  font-size: 32px;
+  line-height: 32px;
 }
 
-button, .button-text {
+.p2 {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.p3 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.p3-text {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+button,
+.button-text {
   font-size: 36px;
   line-height: 32px;
+  letter-spacing: -0.03em;
 }
 
 .caption {
   font-size: 18px;
   line-height: 20px;
+  letter-spacing: 0em;
 }
 
 .caption-2 {
   font-size: 16px;
   line-height: 20px;
+  letter-spacing: 0em;
 }
 
 .subtitle {
   font-size: 20px;
   line-height: 20px;
 
+  letter-spacing: -0.03em;
 }
 
 .policys-text {
   font-size: 20px;
   line-height: 28px;
+  letter-spacing: -0.01em;
 }
 
-@media (max-width: $bp-max-mobile) {
+@screen mobile {
   .container {
     max-width: 100%;
     padding: 0 20px;
   }
-
-  h1 {
+  .h1 {
     font-size: 68px;
     line-height: 60px;
-    &.h1-huge {
-      font-size: 88px;
-      line-height: 72px;
-    }
+  }
+  .h1-huge {
+    font-size: 88px;
+    line-height: 72px;
+    letter-spacing: -0.02em;
   }
 
   h2 {
@@ -169,26 +196,25 @@ button, .button-text {
     line-height: 40px;
   }
 
-  p {
-    &.p1 {
-      font-size: 20px;
-      line-height: 24px;
-    }
-
-    &.p2 {
-      font-size: 24px;
-      line-height: 28px;
-    }
-
-    &.p3 {
-      font-size: 16px;
-      line-height: 20px;
-    }
+  .p1 {
+    font-size: 20px;
+    line-height: 24px;
   }
 
-  button, .button-text {
+  .p2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .p3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  button,
+  .button-text {
     font-size: 18px;
     line-height: 16px;
+    letter-spacing: 0em;
   }
 
   .caption {
