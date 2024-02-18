@@ -1,6 +1,20 @@
 <template>
-  <TheHeader />
-  <slot></slot>
+  <div class="default-layout">
+    <TheHeader />
+    <div class="default-layout__content">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.default-layout__content {
+  transition: opacity 0.3s ease-in-out;
+}
+.default-layout:has(.header--opened) {
+  .default-layout__content {
+    opacity: 0.7;
+  }
+}
+</style>
+<script setup lang="ts"></script>

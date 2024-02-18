@@ -1,24 +1,28 @@
 <script setup>
 const { locale, setLocale } = useI18n();
+
+const isMenuOpened = ref(false);
 </script>
 
 <template>
-  <div class="header">
-    <div class="container header__container flex">
-      <div class="header__left flex items-center">
-        <NuxtImg src="/images/logo.svg" class="header__logo" alt="" />
-        <div class="header__lang-list flex items-center">
+  <div class="header" :class="{ 'header--opened': isMenuOpened }">
+    <div class="container header__container">
+      <div class="header__left">
+        <div class="header__logo--container">
+          <NuxtImg src="/images/logo.svg" class="header__logo" alt="" />
+        </div>
+        <div class="header__lang-list">
           <div
             :class="{ 'active pointer-events-none': locale == 'en' }"
-            class="header__lang-item caption"
+            class="header__lang-item"
             @click="setLocale('en')"
           >
             EN
           </div>
-          <div class="header__lang-dot caption"></div>
+          <div class="header__lang-dot"></div>
           <div
             :class="{ 'active pointer-events-none': locale == 'ru' }"
-            class="header__lang-item caption"
+            class="header__lang-item"
             @click="setLocale('ru')"
           >
             RU
@@ -27,106 +31,117 @@ const { locale, setLocale } = useI18n();
       </div>
       <ul class="header__list">
         <li class="active">
-          <a class="caption" href="">{{ $t('header.links.About') }}</a>
+          <a href="">{{ $t('header.links.About') }}</a>
         </li>
         <li>
-          <a class="caption" href="">{{ $t('header.links.Affiliates') }}</a>
+          <a href="">{{ $t('header.links.Affiliates') }}</a>
         </li>
         <li>
-          <a class="caption" href="">{{ $t('header.links.Advertisers') }}</a>
+          <a href="">{{ $t('header.links.Advertisers') }}</a>
         </li>
         <li>
-          <a class="caption" href="">{{ $t('header.links.Reviews') }}</a>
+          <a href="">{{ $t('header.links.Reviews') }}</a>
         </li>
         <li>
-          <a class="caption" href="">{{ $t('header.links.Partners') }}</a>
+          <a href="">{{ $t('header.links.Partners') }}</a>
         </li>
       </ul>
-      <div class="header__btns flex items-center">
-        <button class="header__btn caption">
+      <div class="header__btns header__btns--desktop">
+        <button class="header__btn header__btn--auth">
           {{ $t('header.buttons.auth') }}
         </button>
-        <button class="header__btn caption">
+        <button class="header__btn header__btn--registration">
           {{ $t('header.buttons.registration') }}
+        </button>
+        <button
+          @click="isMenuOpened = !isMenuOpened"
+          class="header__btn header__btn--menu"
+        >
+          {{
+            isMenuOpened
+              ? $t('header.buttons.close')
+              : $t('header.buttons.account')
+          }}
         </button>
       </div>
     </div>
+    <ClientOnly />
+    <v-expand-transition>
+      <div class="header__expand" v-if="isMenuOpened">
+        <div class="container">
+          <div class="header__btns header__btns--mobile">
+            <button class="header__btn header__btn--big header__btn--auth">
+              {{ $t('header.buttons.auth') }}
+            </button>
+            <button
+              class="header__btn header__btn--big header__btn--registration"
+            >
+              {{ $t('header.buttons.registration') }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </v-expand-transition>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  background: $color-dark;
+  @apply sticky top-0 inset-x-0 z-20 bg-dark;
   &__container {
-    justify-content: space-between;
-    width: 100%;
-    height: 68px;
+    @apply flex justify-between w-full h-[68px];
   }
   &__left {
-    gap: 32px;
+    @apply flex items-center gap-8;
   }
 
   &__lang {
     &-list {
-      gap: 4px;
+      @apply flex items-center gap-1;
     }
     &-item {
-      margin-top: 4px;
-      opacity: 0.5;
-      cursor: pointer;
+      @apply mt-1 opacity-50 cursor-pointer caption-text;
       &.active {
         opacity: 1;
       }
     }
     &-dot {
       width: 7px;
-      height: 100%;
       height: 10px;
-      position: relative;
+      @apply relative caption-text;
       &:after {
-        position: absolute;
+        @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-1 h-1 bg-white opacity-50 rounded-3xl;
         content: '';
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 4px;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 8px;
       }
     }
   }
   &__logo {
     width: 182px;
     height: 44px;
+    &--container {
+      display: contents;
+    }
   }
   &__btns {
-    gap: 8px;
+    @apply flex items-center gap-2;
+    .header__btn--menu {
+      display: none;
+    }
   }
   &__btn {
-    padding: 9px 12px 5px;
-    text-transform: uppercase;
-    border: 1px solid $color-white;
-    border-radius: 48px;
-    height: fit-content;
+    padding: 10px 11px 4px;
+    @apply uppercase border border-white border-solid rounded-[48px] h-fit caption-text;
+    &--big {
+      @apply pt-6 pb-4 button-text;
+    }
   }
   &__list {
-    display: flex;
-    gap: 16px;
-    list-style: none;
-    text-transform: uppercase;
-    position: absolute;
     top: 21px;
     left: 50%;
     transform: translateX(-50%);
-    height: 20px;
+    @apply flex gap-4 list-none uppercase absolute h-5;
     a {
-      white-space: nowrap;
+      @apply whitespace-nowrap caption-text;
     }
     li {
       opacity: 0.5;
@@ -137,16 +152,48 @@ const { locale, setLocale } = useI18n();
       }
     }
   }
+  &__expand {
+    @apply absolute top-full left-0 right-0 bg-dark z-20;
+  }
 }
 
 @screen mobile {
   .header {
-    padding: 12px 0 0;
-    display: flex;
-    gap: 16px;
+    @apply p-0 flex flex-col gap-4;
     img {
       width: 132px;
       height: 32px;
+    }
+    &__container {
+      gap: 12px;
+      height: 56px;
+    }
+    &__list {
+      display: none;
+    }
+    &__btns {
+      &--desktop {
+        .header__btn--auth,
+        .header__btn--registration {
+          display: none;
+        }
+        .header__btn--menu {
+          padding: 7px 9px 3px;
+          display: block;
+        }
+      }
+      &--mobile {
+        @apply flex-col items-stretch pt-6 pb-10;
+      }
+    }
+    &__left {
+      display: contents;
+    }
+    &__logo {
+      &--container {
+        flex: 1 0 auto;
+        @apply flex items-center;
+      }
     }
   }
 }

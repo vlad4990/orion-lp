@@ -2,4 +2,6 @@
 
 <template>
   <SectionStart />
+  <LazySectionRole />
+  <LazySectionAbout />
 </template>

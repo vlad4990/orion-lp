@@ -10,10 +10,38 @@
     },
     "buttons": {
       "auth": "Sign in",
-      "registration": "Registration"
+      "registration": "Registration",
+      "account": "account",
+      "close": "close"
     }
   },
   "start": {
-    "label": "Worldwide<br>Affiliate<br>network&nbsp"
+    "label": "Worldwide<br>Affiliate<br>network&nbsp",
+    "description": "Star Navigation from Direct Offers <br/>to Partners Growth"
+  },
+  "role": {
+    "title": "Choose <br>your role"
+  },
+  "about": {
+    "tip": "about us",
+    "title": "Affiliate CPA Network created by professionals <br>with more than <span>10 years of experience</span> in <br>affiliate marketing",
+    "rows": {
+      "one": {
+        "left": "Direct Offers",
+        "right": "Trusted Partners"
+      },
+      "two": {
+        "left": "Verticals",
+        "right": "iGaming, Betting, Fintech"
+      },
+      "three": {
+        "left": "Paying models",
+        "right": "CPA, Hybrid, Revshare"
+      },
+      "four": {
+        "left": "Round-o-clock Support"
+      }
+    },
+    "label": "Don’t be shy! create account"
   }
 }

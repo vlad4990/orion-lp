@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="items-wrap subtitle">
+  <div class="items-wrap">
     <div class="items marquee">
       <template v-for="key in 10" :key="'first-' + key">
         <div class="item">Register now!</div>
@@ -19,7 +19,7 @@
 
 <style scoped lang="scss">
 .items-wrap {
-  @apply relative flex overflow-hidden select-none gap-10 bg-yellow h-10 rounded-2xl;
+  @apply relative flex overflow-hidden select-none gap-10 bg-yellow h-10 rounded-[110px] mx-2 subtitle;
 }
 .items {
   @apply shrink-0 flex gap-10 justify-around items-center min-w-full;
@@ -52,6 +52,20 @@
 }
 .items-wrap:hover .marquee {
   animation-play-state: paused;
+}
+
+@screen mobile {
+  .items-wrap {
+    @apply h-8 caption-text;
+  }
+  .items {
+    @apply gap-2;
+  }
+  .item {
+    &:not(.item--dot) {
+      @apply mt-1;
+    }
+  }
 }
 
 @keyframes scroll {
