@@ -43,5 +43,17 @@
       }
     },
     "label": "Don’t be shy! create account"
+  },
+  "affiliates": {
+    "title": "Affiliates",
+    "items": {
+      "1": "Partners offers and promo codes",
+      "2": "Reliable agency accounts to rent",
+      "3": "Transparent statistics and comfortable dashboard",
+      "4": "Lifelong referral program",
+      "5": "Fast and full support from a personal manager",
+      "6": "Payout up to 2 time per month in a convenient way",
+      "7": "Direct advertisers only"
+    }
   }
 }

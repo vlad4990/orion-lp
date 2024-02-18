@@ -4,4 +4,5 @@
   <SectionStart />
   <LazySectionRole />
   <LazySectionAbout />
+  <LazySectionAffiliates />
 </template>

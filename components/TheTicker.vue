@@ -1,7 +1,14 @@
-<script setup></script>
+<script setup>
+defineProps({
+  pink: {
+    type: Boolean,
+    default: false,
+  },
+});
+</script>
 
 <template>
-  <div class="items-wrap">
+  <div class="items-wrap" :class="{ pink }">
     <div class="items marquee">
       <template v-for="key in 10" :key="'first-' + key">
         <div class="item">Register now!</div>
@@ -20,6 +27,9 @@
 <style scoped lang="scss">
 .items-wrap {
   @apply relative flex overflow-hidden select-none gap-10 bg-yellow h-10 rounded-[110px] mx-2 subtitle;
+  &.pink {
+    @apply bg-pink;
+  }
 }
 .items {
   @apply shrink-0 flex gap-10 justify-around items-center min-w-full;
