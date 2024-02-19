@@ -5,4 +5,5 @@
   <LazySectionRole />
   <LazySectionAbout />
   <LazySectionAffiliates />
+  <LazySectionAdvertisers />
 </template>

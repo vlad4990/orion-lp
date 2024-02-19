@@ -54,6 +54,22 @@
       "5": "Fast and full support from a personal manager",
       "6": "Payout up to 2 time per month in a convenient way",
       "7": "Direct advertisers only"
-    }
+    },
+    "link": "Become a partner",
+    "description": "Sign up and get access to 500+ offers"
+  },
+  "advertisers": {
+    "title": "Advertisers",
+    "items": {
+      "1": "Transparent communication and honest feedback",
+      "2": "Trusted affiliates",
+      "3": "Fast onboarding and easy integration",
+      "4": "Quality traffic sources:",
+      "4-additional": "Social, Google UAC + PPC, ASO, premium in-app, others",
+      "5": "GEO\u2028WorldWide",
+      "6": "Advanced antifraud system"
+    },
+    "link": "Become an advertiser",
+    "description": "Contact us and get more paying users"
   }
 }
