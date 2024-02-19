@@ -26,7 +26,7 @@ export default <Partial<Config>>{
         'color-bg': '#000000',
       },
     },
-    screens: { mobile: { max: '1440px' } },
+    screens: { mobile: { max: '1400px' } },
   },
   plugins: [],
 };
