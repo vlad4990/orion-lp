@@ -156,6 +156,12 @@
     &__grid {
       @apply mt-5;
     }
+    &__crown {
+      @apply hidden;
+    }
+    &__star {
+      display: none;
+    }
     &__vector {
       display: none;
     }

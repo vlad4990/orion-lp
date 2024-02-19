@@ -16,5 +16,10 @@
     opacity: 0.7;
   }
 }
+@screen mobile {
+  .default-layout {
+    overflow: hidden;
+  }
+}
 </style>
 <script setup lang="ts"></script>

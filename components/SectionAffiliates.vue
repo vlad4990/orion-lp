@@ -158,6 +158,11 @@
     &__grid {
       @apply mt-5;
     }
+
+    &__star {
+      transform: scale(-1, 1);
+      @apply w-[25px] h-[29px] left-[264px] -top-[15px];
+    }
     &__vector {
       display: none;
     }
