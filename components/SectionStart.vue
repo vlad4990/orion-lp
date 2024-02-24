@@ -35,23 +35,20 @@ onMounted(() => {
 <style lang="scss" scoped>
 .section-start {
   &__label {
-    transform: rotate(-12.39deg);
     z-index: 3;
-    top: 34px;
-    left: 90px;
+    top: 10px;
+    left: 78px;
     &:after {
       content: '';
     }
-    @apply uppercase pb-3 pt-5 px-4 bg-pink text-dark text-center rounded-2xl absolute;
+    @apply uppercase pb-2 pt-4 px-3 bg-pink text-dark text-center rounded-2xl absolute scale-90 -rotate-[12deg];
   }
   &__title-top,
   &__title-bottom {
     @apply uppercase;
   }
   &__title-top {
-    position: relative;
-    z-index: 2;
-    padding-top: 92px;
+    @apply relative z-[2] pt-14;
   }
   &__title-bottom {
     margin-left: 184px;
@@ -88,7 +85,7 @@ onMounted(() => {
     height: 860px;
   }
   &__ticker {
-    margin-top: 100px;
+    margin-top: 24px;
   }
 }
 
