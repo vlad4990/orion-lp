@@ -71,5 +71,31 @@
     },
     "link": "Become an advertiser",
     "description": "Contact us and get more paying users"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "description": "What our partners say about working with us",
+    "items": {
+      "1": {
+        "text": "We have had a positive experience working with ORION Partners!) The integration went quickly, there were no issues with payments, communication was friendly and easy \uD83D\uDE42",
+        "name": "Alexey<br> head of a mediabuying team"
+      },
+      "2": {
+        "text": "We've been working with the guys for a long time and never had any problems. Quick approving, payments strictly on schedule, professional support from managers - there is everything you want to see from a good affiliate program. Therefore, we can confidently recommend ORION Partners as a reliable and stable partner :)",
+        "name": "Stepan<br>head of a mediabuying team"
+      },
+      "3": {
+        "text": "ORION Partners are awesome guys!! Their managers are always ready to discuss rate increases and add any offer, even if they didn't have it before. Always timely payments. This flexibility and proactive approach are definitely impressive.",
+        "name": "Ekaterina <br>Affiliate-manager"
+      },
+      "4": {
+        "text": "I've been working with ORION Partners for several months now. The support is top-notch, always fast and effective. Timely payouts emphasize their reliability. Highly recommend ORION Partners for their experience and professionalism!",
+        "name": "Semen <br>Affiliate-manager"
+      },
+      "5": {
+        "text": "I only have a positive experience with ORION Partners. The guys are so friendly that we constantly exchange experiences, making our collaboration not just business but a mutually beneficial partnership based on the win-win formula.",
+        "name": "Vitaly <br>Head of Gekkoo <br> mediabuying team"
+      }
+    }
   }
 }
