@@ -4,6 +4,7 @@
     <div class="default-layout__content">
       <slot></slot>
     </div>
+    <TheFooter />
   </div>
 </template>
 
@@ -19,6 +20,9 @@
 @screen mobile {
   .default-layout {
     overflow: hidden;
+    &__content {
+      padding-top: 56px;
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="reviews">
+  <div id="reviews" class="reviews">
     <div class="container">
       <div class="reviews__container">
         <div class="reviews__title">{{ $t('reviews.title') }}</div>

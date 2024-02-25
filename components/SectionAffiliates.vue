@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="affiliates">
+  <div id="affiliates" class="affiliates">
     <div class="container">
       <div class="affiliates__container">
         <div class="affiliates__title">{{ $t('affiliates.title') }}</div>
@@ -76,9 +76,7 @@
 
 <style scoped lang="scss">
 .affiliates {
-  &__container {
-    @apply mt-[260px];
-  }
+  @apply pt-[128px];
   &__title {
     @apply h1 uppercase;
   }
@@ -152,9 +150,7 @@
 
 @screen mobile {
   .affiliates {
-    &__container {
-      @apply mt-[176px];
-    }
+    @apply pt-[56px];
     &__grid {
       @apply mt-5;
     }

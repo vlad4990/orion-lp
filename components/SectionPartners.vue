@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="partners">
+  <div id="partners" class="partners">
     <div class="container">
       <div class="partners__container">
         <h2 class="partners__title">{{ $t('partners') }}</h2>

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="advertisers">
+  <div id="advertisers" class="advertisers">
     <div class="container">
       <div class="advertisers__container">
         <div class="advertisers__title">{{ $t('advertisers.title') }}</div>
@@ -70,9 +70,7 @@
 
 <style scoped lang="scss">
 .advertisers {
-  &__container {
-    @apply mt-[260px];
-  }
+  @apply pt-[124px];
   &__title {
     @apply h1 uppercase;
   }
@@ -150,9 +148,7 @@
 
 @screen mobile {
   .advertisers {
-    &__container {
-      @apply mt-[72px];
-    }
+    @apply pt-[72px];
     &__grid {
       @apply mt-5;
     }

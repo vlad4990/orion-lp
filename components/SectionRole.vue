@@ -61,7 +61,7 @@
 
 <style scoped lang="scss">
 .choose-role {
-  @apply mt-[212px] mb-[180px];
+  @apply mt-[212px] pb-[100px];
   &__title {
     @apply text-yellow uppercase;
   }
@@ -106,7 +106,7 @@
 
 @screen mobile{
   .choose-role {
-    @apply my-[40px];
+    @apply mt-[40px] pb-0;
     &__double-star{
       @apply w-[25px] h-[31px] -top-[9px] left-[191px]
     }

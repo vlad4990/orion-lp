@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="about-us">
+  <div id="about" class="about-us">
     <div class="container">
       <div class="about-us__container">
         <div class="about-us__tip">{{ $t('about.tip') }}</div>
@@ -43,6 +43,7 @@
 
 <style scoped lang="scss">
 .about-us {
+  @apply pt-[80px] pb-[132px];
   &__container {
     @apply flex flex-col items-center;
   }
@@ -87,6 +88,7 @@
 
 @screen mobile {
   .about-us {
+    @apply pt-10 pb-[120px];
     &__tip {
       @apply caption-text;
     }

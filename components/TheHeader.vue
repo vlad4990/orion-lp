@@ -31,19 +31,19 @@ const isMenuOpened = ref(false);
       </div>
       <ul class="header__list">
         <li class="active">
-          <a href="">{{ $t('header.links.About') }}</a>
+          <a href="#about">{{ $t('header.links.About') }}</a>
         </li>
         <li>
-          <a href="">{{ $t('header.links.Affiliates') }}</a>
+          <a href="#affiliates">{{ $t('header.links.Affiliates') }}</a>
         </li>
         <li>
-          <a href="">{{ $t('header.links.Advertisers') }}</a>
+          <a href="#advertisers">{{ $t('header.links.Advertisers') }}</a>
         </li>
         <li>
-          <a href="">{{ $t('header.links.Reviews') }}</a>
+          <a href="#reviews">{{ $t('header.links.Reviews') }}</a>
         </li>
         <li>
-          <a href="">{{ $t('header.links.Partners') }}</a>
+          <a href="#partners">{{ $t('header.links.Partners') }}</a>
         </li>
       </ul>
       <div class="header__btns header__btns--desktop">
@@ -88,6 +88,9 @@ const isMenuOpened = ref(false);
 <style lang="scss" scoped>
 .header {
   @apply sticky top-0 inset-x-0 z-20 bg-dark;
+  @screen mobile {
+    @apply fixed;
+  }
   &__container {
     @apply flex justify-between w-full h-[68px];
   }
