@@ -8,4 +8,9 @@
 useSeoMeta({
   title: `orion partners`,
 });
+useHead({
+  bodyAttrs: {
+    id: 'orion-partners',
+  },
+});
 </script>

@@ -98,5 +98,18 @@
       }
     }
   },
-  "partners": "Our partners"
+  "partners": "Our partners",
+  "questions": {
+    "title": "Any questions?",
+    "description": "Say hello to our team!",
+    "placeholders": {
+      "name": "NAME",
+      "mail": "E-MAIL",
+      "message": "MESSAGE",
+      "required": "THIS FIELD IS REQUIRED",
+      "button": "Send message",
+      "thanks": "Thank you! We will be in touch with you shortly",
+      "error": "Server error, message not sent, please try again"
+    }
+  }
 }
