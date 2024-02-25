@@ -7,4 +7,5 @@
   <LazySectionAffiliates />
   <LazySectionAdvertisers />
   <LazySectionReviews />
+  <LazySectionPartners />
 </template>
