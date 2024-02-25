@@ -7,40 +7,100 @@
         <h2 class="partners__title">{{ $t('partners') }}</h2>
         <div class="partners__grid">
           <div class="partners__grid-item">
-            <img class="partners-img-1" src="/images/partners-1.png" alt="" />
+            <img
+              class="partners-img-1"
+              src="/images/partners-1.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-2" src="/images/partners-2.png" alt="" />
+            <img
+              class="partners-img-2"
+              src="/images/partners-2.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-3" src="/images/partners-3.png" alt="" />
+            <img
+              class="partners-img-3"
+              src="/images/partners-3.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-4" src="/images/partners-4.png" alt="" />
+            <img
+              class="partners-img-4"
+              src="/images/partners-4.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-5" src="/images/partners-5.png" alt="" />
+            <img
+              class="partners-img-5"
+              src="/images/partners-5.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-6" src="/images/partners-6.png" alt="" />
+            <img
+              class="partners-img-6"
+              src="/images/partners-6.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-7" src="/images/partners-7.png" alt="" />
+            <img
+              class="partners-img-7"
+              src="/images/partners-7.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-8" src="/images/partners-8.png" alt="" />
+            <img
+              class="partners-img-8"
+              src="/images/partners-8.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-9" src="/images/partners-9.png" alt="" />
+            <img
+              class="partners-img-9"
+              src="/images/partners-9.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-10" src="/images/partners-10.png" alt="" />
+            <img
+              class="partners-img-10"
+              src="/images/partners-10.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-11" src="/images/partners-11.png" alt="" />
+            <img
+              class="partners-img-11"
+              src="/images/partners-11.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
           <div class="partners__grid-item">
-            <img class="partners-img-12" src="/images/partners-12.png" alt="" />
+            <img
+              class="partners-img-12"
+              src="/images/partners-12.png"
+              loading="lazy"
+              alt=""
+            />
           </div>
         </div>
       </div>
