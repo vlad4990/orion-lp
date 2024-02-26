@@ -18,7 +18,7 @@ const submit = async (event) => {
   loading.value = true;
   isServerError.value = false;
   try {
-    const response = await fetch('http://2.59.36.5:3000/api/send-email', {
+    const response = await fetch('https://2.59.36.5:3000/api/send-email', {
       method: 'POST',
       body: JSON.stringify({
         email: mail.value,
