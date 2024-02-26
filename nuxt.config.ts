@@ -2,6 +2,21 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 export default defineNuxtConfig({
   app: {
     baseURL: '/orion-lp/',
+    head: {
+      script: [
+        {
+          async: true,
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-E7E4KY6JJ5',
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E7E4KY6JJ5');`,
+        },
+      ],
+    },
   },
   devtools: { enabled: true },
   css: ['~/assets/scss/style.scss', 'animate.css'],

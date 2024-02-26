@@ -11,10 +11,10 @@
             >hello@orionpartners.pro</a
           >
           <div class="footer__links--wrapper">
-            <a href="mailto:hello@orionpartners.pro" target="_blank"
-              >Telegram</a
-            >
-            <a href="mailto:hello@orionpartners.pro" target="_blank"
+            <a href="https://t.me/orionpartners" target="_blank">Telegram</a>
+            <a
+              href="https://cy.linkedin.com/company/orion-mobile-agency"
+              target="_blank"
               >LinkedIn</a
             >
           </div>
@@ -70,18 +70,19 @@
         @apply flex gap-9 w-fit mx-auto;
       }
     }
-    a {
-      @apply relative;
-      &:nth-child(2),
-      &:nth-child(3) {
-        &:before {
-          content: '';
-          @apply absolute h-1 w-1 bg-white rounded top-1/3 -left-[16px];
+    .footer__links--wrapper {
+      a:before {
+        content: '';
+        @apply absolute h-1 w-1 bg-white rounded top-1/3 -left-[16px];
+        @screen mobile {
+          &:first-child {
+            @apply relative;
+          }
         }
       }
-      @screen mobile {
-        @apply relative;
-      }
+    }
+    a {
+      @apply relative;
     }
   }
 }

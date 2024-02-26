@@ -2,16 +2,22 @@
 const { locale, setLocale } = useI18n();
 
 const isMenuOpened = ref(false);
+
+const { _route } = useNuxtApp();
+
+const noNavigation = computed(() => {
+  return ['/policy', '/terms'].includes(_route.path);
+});
 </script>
 
 <template>
   <div class="header" :class="{ 'header--opened': isMenuOpened }">
     <div class="container header__container">
       <div class="header__left">
-        <div class="header__logo--container">
+        <NuxtLink to="/" class="header__logo--container">
           <NuxtImg src="/images/logo.svg" class="header__logo" alt="" />
-        </div>
-        <div class="header__lang-list">
+        </NuxtLink>
+        <div v-if="!noNavigation" class="header__lang-list">
           <div
             :class="{ 'active pointer-events-none': locale == 'en' }"
             class="header__lang-item"
@@ -29,7 +35,7 @@ const isMenuOpened = ref(false);
           </div>
         </div>
       </div>
-      <ul class="header__list">
+      <ul v-if="!noNavigation" class="header__list">
         <li class="active">
           <a href="#about">{{ $t('header.links.About') }}</a>
         </li>
@@ -47,12 +53,20 @@ const isMenuOpened = ref(false);
         </li>
       </ul>
       <div class="header__btns header__btns--desktop">
-        <button class="header__btn header__btn--auth">
+        <NuxtLink
+          target="_blank"
+          to="https://dashboard.orionpartners.pro/login"
+          class="header__btn header__btn--auth"
+        >
           {{ $t('header.buttons.auth') }}
-        </button>
-        <button class="header__btn header__btn--registration">
+        </NuxtLink>
+        <NuxtLink
+          target="_blank"
+          to="https://dashboard.orionpartners.pro/signup/affiliate"
+          class="header__btn header__btn--registration"
+        >
           {{ $t('header.buttons.registration') }}
-        </button>
+        </NuxtLink>
         <button
           @click="isMenuOpened = !isMenuOpened"
           class="header__btn header__btn--menu"
@@ -70,14 +84,20 @@ const isMenuOpened = ref(false);
       <div class="header__expand" v-if="isMenuOpened">
         <div class="container">
           <div class="header__btns header__btns--mobile">
-            <button class="header__btn header__btn--big header__btn--auth">
+            <NuxtLink
+              target="_blank"
+              to="https://dashboard.orionpartners.pro/login"
+              class="header__btn header__btn--big header__btn--auth"
+            >
               {{ $t('header.buttons.auth') }}
-            </button>
-            <button
+            </NuxtLink>
+            <NuxtLink
+              target="_blank"
+              to="https://dashboard.orionpartners.pro/signup/affiliate"
               class="header__btn header__btn--big header__btn--registration"
             >
               {{ $t('header.buttons.registration') }}
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -186,7 +206,7 @@ const isMenuOpened = ref(false);
         }
       }
       &--mobile {
-        @apply flex-col items-stretch pt-6 pb-10;
+        @apply flex-col items-stretch pt-6 pb-10 text-center;
       }
     }
     &__left {

@@ -34,7 +34,7 @@
             <div class="about-table__right"></div>
           </div>
         </div>
-        <div class="about-us__label">{{ $t('about.label') }}</div>
+        <div class="about-us__label" v-html="$t('about.label')"></div>
         <img class="about-us__vector" src="/images/about-vector.png" />
       </div>
     </div>
@@ -112,6 +112,9 @@
         @apply -bottom-[9px];
       }
     }
+  }
+  .ru .about-us__label {
+    @apply top-[503px];
   }
 }
 </style>

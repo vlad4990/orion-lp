@@ -1,5 +1,5 @@
 <template>
-  <div class="default-layout">
+  <div class="default-layout" :class="locale">
     <TheHeader />
     <div class="default-layout__content">
       <slot></slot>
@@ -26,4 +26,6 @@
   }
 }
 </style>
-<script setup lang="ts"></script>
+<script setup>
+const { locale } = useI18n();
+</script>

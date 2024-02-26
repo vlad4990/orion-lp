@@ -14,7 +14,7 @@
             href="https://dashboard.orionpartners.pro/signup/affiliate"
             class="affilate-link"
           >
-            <span class="button-text">I’m <br />Affiliate</span>
+            <span class="button-text"  v-html="$t('role.affiliate')"></span>
             <svg
               width="55"
               height="40"
@@ -36,7 +36,7 @@
             href="https://dashboard.orionpartners.pro/signup/brand"
             class="advertiser-link"
           >
-            <span class="button-text">I’m <br />Advertiser</span>
+            <span class="button-text" v-html="$t('role.advertiser')"></span>
             <svg
               width="55"
               height="40"
@@ -83,6 +83,13 @@
   @apply w-[430px] h-[338px] bg-contain text-dark uppercase button-text text-center;
   @apply absolute -top-[137px] left-[729px] rotate-[10deg];
   background-image: url('/assets/images/i-am-affiliate.webp');
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @apply scale-105;
+    @screen mobile {
+      @apply scale-100;
+    }
+  }
   span {
     margin-top: 6px;
   }
@@ -96,11 +103,44 @@
   @apply w-[408px] h-[408px] bg-contain uppercase text-center;
   @apply absolute -top-[7px] left-[954px] -rotate-[14deg];
   background-image: url('/assets/images/i-am-advertiser.webp');
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @apply scale-105;
+    @screen mobile {
+      @apply scale-100;
+    }
+  }
   span {
     margin-top: 6px;
   }
   svg {
     margin-top: 7px;
+  }
+}
+
+.ru{
+  .choose-role{
+    &__double-star{
+    @apply top-[-10px] left-[135px];
+    }
+  }
+  .advertiser-link span{
+    margin-top: 35px;
+  }
+  @screen mobile{
+    .choose-role{
+      &__title{
+        &:deep br{
+           display: none;
+        }
+      }
+      &__double-star{
+        @apply top-[49px];
+      }
+    }
+    .advertiser-link span{
+      margin-top: 6px;
+    }
   }
 }
 
@@ -148,4 +188,15 @@
     }
   }
 }
+</style>
+
+<style lang="scss">
+@screen mobile{
+  .advertiser-link, .affilate-link{
+    br{
+      display: none;
+    }
+  }
+}
+
 </style>

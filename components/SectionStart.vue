@@ -8,25 +8,46 @@ onMounted(() => {
 <template>
   <div class="section-start">
     <div class="container">
-      <img class="section-start__star-1" src="/images/star-blue-big.svg" />
-      <div class="p1 section-start__label" v-html="$t('start.label')"></div>
-      <div class="section-start__title-top h1-huge">orion</div>
-      <div class="section-start__title-bottom h1-huge">
+      <img
+        class="section-start__star-1 animate__animated animate__zoomIn"
+        src="/images/star-blue-big.svg"
+      />
+      <div
+        class="p1 section-start__label animate__animated animate__zoomIn"
+        v-html="$t('start.label')"
+      ></div>
+      <div
+        class="section-start__title-top h1-huge animate__animated animate__zoomIn"
+      >
+        orion
+      </div>
+      <div
+        class="section-start__title-bottom h1-huge animate__animated animate__zoomIn"
+      >
         partners
         <div class="section-start__title-bottom--smile"></div>
         <div class="section-start__title-bottom--crown"></div>
       </div>
 
       <p
-        class="section-start__description p1"
+        class="section-start__description p1 animate__animated animate__zoomIn"
         v-html="$t('start.description')"
       ></p>
-      <img class="absolute star-1" src="/images/4-corner-white-star.png" />
-      <img class="absolute star-2" src="/images/4-corner-white-star.png" />
-      <img class="absolute star-3" src="/images/4-corner-white-star.png" />
-      <div class="dot dot-1"></div>
-      <div class="dot dot-2"></div>
-      <div class="dot dot-3"></div>
+      <img
+        class="absolute star-1 animate__animated animate__zoomIn"
+        src="/images/4-corner-white-star.png"
+      />
+      <img
+        class="absolute star-2 animate__animated animate__zoomIn"
+        src="/images/4-corner-white-star.png"
+      />
+      <img
+        class="absolute star-3 animate__animated animate__zoomIn"
+        src="/images/4-corner-white-star.png"
+      />
+      <div class="dot dot-1 animate__animated animate__zoomIn"></div>
+      <div class="dot dot-2 animate__animated animate__zoomIn"></div>
+      <div class="dot dot-3 animate__animated animate__zoomIn"></div>
     </div>
     <TheTicker class="section-start__ticker" />
   </div>
@@ -123,6 +144,17 @@ onMounted(() => {
   &-3 {
     top: 676px;
     left: 396px;
+  }
+}
+
+.ru {
+  .section-start {
+    &__label {
+      @apply top-[25px] left-[10px];
+      @screen mobile {
+        @apply top-[295px] left-[110px];
+      }
+    }
   }
 }
 

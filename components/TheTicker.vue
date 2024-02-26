@@ -8,7 +8,12 @@ defineProps({
 </script>
 
 <template>
-  <div class="items-wrap" :class="{ pink }">
+  <a
+    target="_blank"
+    href="https://dashboard.orionpartners.pro/signup/affiliate"
+    class="items-wrap"
+    :class="{ pink }"
+  >
     <div class="items marquee">
       <template v-for="key in 10" :key="'first-' + key">
         <div class="item">Register now!</div>
@@ -21,12 +26,12 @@ defineProps({
         <div class="item item--dot"></div>
       </template>
     </div>
-  </div>
+  </a>
 </template>
 
 <style scoped lang="scss">
 .items-wrap {
-  @apply relative flex overflow-hidden select-none gap-10 bg-yellow h-10 rounded-[110px] mx-2 subtitle;
+  @apply relative flex overflow-hidden select-none gap-2 bg-yellow h-10 rounded-[110px] mx-2 subtitle;
   &.pink {
     @apply bg-pink;
   }

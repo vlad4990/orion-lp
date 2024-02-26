@@ -58,7 +58,12 @@
             </div>
           </div>
         </div>
-        <a href="/" class="affiliates__link">{{ $t('affiliates.link') }}</a>
+        <a
+          href="https://dashboard.orionpartners.pro/signup/affiliate"
+          target="_blank"
+          class="affiliates__link"
+          >{{ $t('affiliates.link') }}</a
+        >
         <div class="affiliates__description">
           {{ $t('affiliates.description') }}
         </div>
@@ -100,6 +105,13 @@
     @apply w-[312px] h-[312px];
     @apply absolute top-[404px] left-[1088px] bg-contain text-transparent;
     background-image: url('/images/become-a-partner-eng.png');
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      @apply scale-105;
+      @screen mobile {
+        @apply scale-100;
+      }
+    }
   }
   &__ticker {
     margin-top: 104px;
@@ -144,6 +156,33 @@
     }
     &__text {
       @apply mt-1.5;
+    }
+  }
+}
+
+.ru {
+  .affiliates {
+    &__star {
+      @apply left-[1205px] top-[-38px];
+    }
+    &__link {
+      background-image: url('/images/become-a-partner-rus.png');
+    }
+    &__vector {
+      top: 685px;
+    }
+  }
+  @screen mobile {
+    .affiliates {
+      &__star {
+        @apply left-[296px] top-[-19px];
+      }
+      &__link {
+        background-image: none;
+      }
+      &__vector {
+        display: none;
+      }
     }
   }
 }

@@ -58,7 +58,12 @@
             </div>
           </div>
         </div>
-        <a href="/" class="advertisers__link">{{ $t('advertisers.link') }}</a>
+        <a
+          target="_blank"
+          href="https://dashboard.orionpartners.pro/signup/brand"
+          class="advertisers__link"
+          >{{ $t('advertisers.link') }}</a
+        >
         <div class="advertisers__description">
           {{ $t('advertisers.description') }}
         </div>
@@ -92,6 +97,13 @@
     @apply w-[312px] h-[312px];
     @apply absolute top-[404px] left-[708px] bg-contain text-transparent;
     background-image: url('/images/become-an-advertiser-eng.png');
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      @apply scale-105;
+      @screen mobile {
+        @apply scale-100;
+      }
+    }
   }
   &__ticker {
     margin-top: 300px;
@@ -141,6 +153,36 @@
       @apply mt-1.5;
       &--additional {
         @apply relative p3 mt-1;
+      }
+    }
+  }
+}
+
+.ru {
+  .advertisers {
+    &__title {
+      font-size: 218px;
+      line-height: 204px;
+      letter-spacing: -3%;
+    }
+    &__crown {
+      @apply left-[713px] top-[-31px];
+    }
+    &__link {
+      background-image: url('/images/become-an-advertiser-rus.png');
+    }
+  }
+  @screen mobile {
+    .advertisers {
+      &__title {
+        font-size: 52px;
+        line-height: 44px;
+      }
+      &__crown {
+        display: none;
+      }
+      &__link {
+        background-image: none;
       }
     }
   }

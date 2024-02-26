@@ -1,6 +1,5 @@
 {
   "header": {
-    "name": "mur",
     "links": {
       "About": "About us",
       "Affiliates": "Affiliates",
@@ -20,7 +19,9 @@
     "description": "Star Navigation from Direct Offers <br/>to Partners Growth"
   },
   "role": {
-    "title": "Choose <br>your role"
+    "title": "Choose <br>your role",
+    "affiliate": "I’m <br />Affiliate",
+    "advertiser": "I’m <br />Advertiser"
   },
   "about": {
     "tip": "about us",
