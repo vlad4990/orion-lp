@@ -1,7 +1,6 @@
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 export default defineNuxtConfig({
   app: {
-    baseURL: '/orion-lp/',
     head: {
       script: [
         {
@@ -39,6 +38,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
+    '/policy': { prerender: true },
+    '/terms': { prerender: true },
   },
   i18n: {
     vueI18n: './i18n/i18n.config.ts',
