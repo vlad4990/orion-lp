@@ -112,5 +112,45 @@
       "thanks": "Thank you! We will be in touch with you shortly",
       "error": "Server error, message not sent, please try again"
     }
+  },
+  "dialog": {
+    "auth": {
+      "title": "Log in",
+      "forgot": "Forgot password?",
+      "no-account": "Don't have an account?",
+      "button": "Log in",
+      "partner": "Affiliate Sign Up",
+      "advertiser": "Advertiser Sign Up"
+    },
+    "placeholders": {
+      "mail": "Email",
+      "password": "Password",
+      "error": "Server error, please try again",
+      "firstName": "First Name",
+      "lastName": "Lastname",
+      "repeatPassword": "Password Confirmation",
+      "company": "Company",
+      "telegram": "Telegram"
+    },
+    "errors": {
+      "required": "Field is required",
+      "password": "Passwords do not match",
+      "passwordLength": "The password must be at least 8 characters",
+      "passwordSpecial": "The password must be at least 8 characters long and contain at least 1 uppercase and lowercase letters, numbers, and special characters."
+    },
+    "affiliate": {
+      "title": "Affiliate Sign Up",
+      "button": "Sign Up",
+      "terms": "Agree with <a href='/terms' target='_blanc'>Terms and Conditions</a>",
+      "policy": "Agree with <a href='/policy' target='_blanc'>Privacy Policy</a>",
+      "already": "Already have an account?"
+    },
+    "advertiser": {
+      "title": "Advertiser Sign Up",
+      "button": "Sign Up",
+      "terms": "Agree with <a href='/terms' target='_blanc'>Terms and Conditions</a>",
+      "policy": "Agree with <a href='/policy' target='_blanc'>Privacy Policy</a>",
+      "already": "Already have an account?"
+    }
   }
 }

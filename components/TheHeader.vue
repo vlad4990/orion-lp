@@ -8,6 +8,18 @@ const { _route } = useNuxtApp();
 const noNavigation = computed(() => {
   return ['/policy', '/terms'].includes(_route.path);
 });
+
+const isDialogOpened = useState('isDialogOpened');
+const currentDialog = useState('currentDialog', () => 'auth');
+
+const openAuthDialog = () => {
+  currentDialog.value = 'auth';
+  isDialogOpened.value = true;
+};
+const openAffiliateDialog = () => {
+  currentDialog.value = 'affiliate';
+  isDialogOpened.value = true;
+};
 </script>
 
 <template>
@@ -53,20 +65,15 @@ const noNavigation = computed(() => {
         </li>
       </ul>
       <div class="header__btns header__btns--desktop">
-        <NuxtLink
-          target="_blank"
-          to="https://dashboard.orionpartners.pro/login"
-          class="header__btn header__btn--auth"
-        >
+        <button @click="openAuthDialog" class="header__btn header__btn--auth">
           {{ $t('header.buttons.auth') }}
-        </NuxtLink>
-        <NuxtLink
-          target="_blank"
-          to="https://dashboard.orionpartners.pro/signup/affiliate"
+        </button>
+        <button
+          @click="openAffiliateDialog"
           class="header__btn header__btn--registration"
         >
           {{ $t('header.buttons.registration') }}
-        </NuxtLink>
+        </button>
         <button
           @click="isMenuOpened = !isMenuOpened"
           class="header__btn header__btn--menu"
@@ -84,20 +91,18 @@ const noNavigation = computed(() => {
       <div class="header__expand" v-if="isMenuOpened">
         <div class="container">
           <div class="header__btns header__btns--mobile">
-            <NuxtLink
-              target="_blank"
-              to="https://dashboard.orionpartners.pro/login"
+            <button
               class="header__btn header__btn--big header__btn--auth"
+              @click="openAuthDialog"
             >
               {{ $t('header.buttons.auth') }}
-            </NuxtLink>
-            <NuxtLink
-              target="_blank"
-              to="https://dashboard.orionpartners.pro/signup/affiliate"
+            </button>
+            <button
               class="header__btn header__btn--big header__btn--registration"
+              @click="openAffiliateDialog"
             >
               {{ $t('header.buttons.registration') }}
-            </NuxtLink>
+            </button>
           </div>
         </div>
       </div>

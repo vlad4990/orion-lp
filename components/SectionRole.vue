@@ -1,4 +1,15 @@
 <script setup>
+const isDialogOpened = useState('isDialogOpened');
+const currentDialog = useState('currentDialog', () => '');
+
+const openAdvertiserDialog = () => {
+  currentDialog.value = 'advertiser';
+  isDialogOpened.value = true;
+};
+const openAffiliateDialog = () => {
+  currentDialog.value = 'affiliate';
+  isDialogOpened.value = true;
+};
 </script>
 
 <template>
@@ -10,8 +21,7 @@
         <div class="choose-role__dot"></div>
         <div class="links">
           <a
-            target="_blank"
-            href="https://dashboard.orionpartners.pro/signup/affiliate"
+              @click="openAffiliateDialog"
             class="affilate-link"
           >
             <span class="button-text"  v-html="$t('role.affiliate')"></span>
@@ -32,8 +42,7 @@
             </svg>
           </a>
           <a
-            target="_blank"
-            href="https://dashboard.orionpartners.pro/signup/brand"
+            @click="openAdvertiserDialog"
             class="advertiser-link"
           >
             <span class="button-text" v-html="$t('role.advertiser')"></span>
@@ -79,7 +88,7 @@
 }
 
 .affilate-link {
-  @apply flex items-center justify-center flex-col;
+  @apply flex items-center justify-center flex-col cursor-pointer;
   @apply w-[430px] h-[338px] bg-contain text-dark uppercase button-text text-center;
   @apply absolute -top-[137px] left-[729px] rotate-[10deg];
   background-image: url('/assets/images/i-am-affiliate.webp');
@@ -99,7 +108,7 @@
 }
 
 .advertiser-link {
-  @apply flex items-center justify-center flex-col;
+  @apply flex items-center justify-center flex-col cursor-pointer;
   @apply w-[408px] h-[408px] bg-contain uppercase text-center;
   @apply absolute -top-[7px] left-[954px] -rotate-[14deg];
   background-image: url('/assets/images/i-am-advertiser.webp');

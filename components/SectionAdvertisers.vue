@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+const isDialogOpened = useState('isDialogOpened');
+const currentDialog = useState('currentDialog', () => '');
+
+const openAdvertiserDialog = () => {
+  currentDialog.value = 'advertiser';
+  isDialogOpened.value = true;
+};
+</script>
 
 <template>
   <div id="advertisers" class="advertisers">
@@ -58,12 +66,9 @@
             </div>
           </div>
         </div>
-        <a
-          target="_blank"
-          href="https://dashboard.orionpartners.pro/signup/brand"
-          class="advertisers__link"
-          >{{ $t('advertisers.link') }}</a
-        >
+        <a @click="openAdvertiserDialog" class="advertisers__link">{{
+          $t('advertisers.link')
+        }}</a>
         <div class="advertisers__description">
           {{ $t('advertisers.description') }}
         </div>

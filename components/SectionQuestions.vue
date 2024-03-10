@@ -276,6 +276,9 @@ const rules = {
 }
 
 #orion-partners .v-theme--dark {
-  --v-theme-error: 255, 100, 143;
+  --v-theme-error: 255, 0, 143;
+}
+#orion-partners {
+  --v-theme-error: 255, 0, 143;
 }
 </style>
