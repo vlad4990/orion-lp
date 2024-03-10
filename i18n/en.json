@@ -151,6 +151,7 @@
       "terms": "Agree with <a href='/terms' target='_blanc'>Terms and Conditions</a>",
       "policy": "Agree with <a href='/policy' target='_blanc'>Privacy Policy</a>",
       "already": "Already have an account?"
-    }
+    },
+    "success": "Thank you for signing up! To complete your registration, please check your email and verify your account through the link provided. This step confirms your email address."
   }
 }

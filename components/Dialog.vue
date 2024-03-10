@@ -131,10 +131,8 @@ const SubmitAffiliate = async (event) => {
   loading.value = true;
   isServerError.value = false;
   try {
-    const {
-      info: { one_time_login_link },
-    } = await $fetch(
-      'https://orion.scaletrk.com/api/v2/network/affiliates?api-key=07c3b78d46a294ff7e671a97423c54f2748184bb',
+    const { status } = await $fetch(
+      'https://orion.scaletrk.com/signup/affiliate',
       {
         method: 'POST',
         body: JSON.stringify({
@@ -144,7 +142,7 @@ const SubmitAffiliate = async (event) => {
           password: affiliateFields.value.password,
           password_repeat: affiliateFields.value.repeatPassword,
           company_name: affiliateFields.value.company,
-          status: 2,
+          send_welcome_email: true,
           custom_fields: `{"custom_field_153":"${affiliateFields.value.telegram}"}`,
         }),
         headers: {
@@ -153,7 +151,9 @@ const SubmitAffiliate = async (event) => {
         },
       }
     );
-    goTo(one_time_login_link);
+    if (status === 'success') {
+      currentDialog.value = 'success';
+    }
   } catch (error) {
     console.log('error', error);
     loading.value = false;
@@ -173,28 +173,25 @@ const submitAdvertiser = async (event) => {
   loading.value = true;
   isServerError.value = false;
   try {
-    const {
-      info: { one_time_login_link },
-    } = await $fetch(
-      'https://orion.scaletrk.com/api/v2/network/advertisers?api-key=07c3b78d46a294ff7e671a97423c54f2748184bb',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          email: advertiserFields.value.mail,
-          firstname: advertiserFields.value.firstName,
-          lastname: advertiserFields.value.lastName,
-          password: advertiserFields.value.password,
-          password_repeat: advertiserFields.value.repeatPassword,
-          company_name: advertiserFields.value.company,
-          status: 2,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      }
-    );
-    goTo(one_time_login_link);
+    const { status } = await $fetch('https://orion.scaletrk.com/signup/brand', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: advertiserFields.value.mail,
+        firstname: advertiserFields.value.firstName,
+        lastname: advertiserFields.value.lastName,
+        password: advertiserFields.value.password,
+        password_repeat: advertiserFields.value.repeatPassword,
+        company_name: advertiserFields.value.company,
+        send_welcome_email: true,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    if (status === 'success') {
+      currentDialog.value = 'success';
+    }
   } catch (error) {
     console.log('error', error);
     loading.value = false;
@@ -213,8 +210,17 @@ const submitAdvertiser = async (event) => {
     v-model="isDialogOpened"
   >
     <template v-slot:default="{ isActive }">
-      <v-card class="dialog">
-        <div @click="isActive.value = false" class="dialog__close">&#215;</div>
+      <v-card
+        class="dialog"
+        :class="{ 'dialog--success': currentDialog === 'success' }"
+      >
+        <div
+          v-if="currentDialog !== 'success'"
+          @click="isActive.value = false"
+          class="dialog__close"
+        >
+          &#215;
+        </div>
         <v-form
           @submit.prevent="SubmitAuth"
           validate-on="blur lazy"
@@ -541,6 +547,17 @@ const submitAdvertiser = async (event) => {
             {{ $t('dialog.advertiser.already') }}
           </div>
         </v-form>
+        <div v-if="currentDialog === 'success'" class="dialog__success">
+          {{ $t('dialog.success') }}
+          <v-btn
+            @click="isActive.value = false"
+            height="40"
+            class="dialog-form__btn mt-2"
+            variant="flat"
+            type="submit"
+            >OK
+          </v-btn>
+        </div>
       </v-card>
     </template>
   </v-dialog>
@@ -558,6 +575,12 @@ const submitAdvertiser = async (event) => {
   }
   &__close {
     @apply absolute top-7 right-8 text-[30px] leading-[30px] font-normal mobile:top-5 mobile:right-6 cursor-pointer;
+  }
+  &--success {
+    @apply border-blue border-[10px];
+  }
+  &__success {
+    @apply flex flex-col items-center;
   }
 }
 
