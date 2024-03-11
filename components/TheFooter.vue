@@ -17,6 +17,11 @@
               target="_blank"
               >LinkedIn</a
             >
+            <a
+              href="https://www.instagram.com/orion_partners_pro/"
+              target="_blank"
+              >Instagram</a
+            >
           </div>
         </div>
         <div class="footer__local-links">
