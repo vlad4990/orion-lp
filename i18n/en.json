@@ -126,8 +126,10 @@
       "mail": "Email",
       "password": "Password",
       "error": "Server error, please try again",
+      "emailError": "The email has already been taken",
+      "loginError": "Incorrect email or password",
       "firstName": "First Name",
-      "lastName": "Lastname",
+      "lastName": "Last Name",
       "repeatPassword": "Password Confirmation",
       "company": "Company",
       "telegram": "Telegram"

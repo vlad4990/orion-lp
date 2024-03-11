@@ -18,6 +18,8 @@ watch(currentDialog, () => {
     authForm.value?.reset();
     advertiserForm.value?.reset();
     affiliateForm.value?.reset();
+    isServerError.value = false;
+    isEmailError.value = false;
   } catch (error) {
     console.log('error', error);
   }
@@ -60,6 +62,7 @@ const goTo = (link) => {
 const isSuccess = ref(false);
 
 const isServerError = ref(false);
+const isEmailError = ref(false);
 
 const { t } = useI18n();
 
@@ -114,7 +117,7 @@ const SubmitAuth = async (event) => {
     );
     goTo(one_time_login_link);
   } catch (error) {
-    console.log('error', error);
+    console.log('error', error.response);
     loading.value = false;
     isServerError.value = true;
     return;
@@ -130,6 +133,7 @@ const SubmitAffiliate = async (event) => {
   }
   loading.value = true;
   isServerError.value = false;
+  isEmailError.value = false;
   try {
     const { status } = await $fetch(
       'https://orion.scaletrk.com/signup/affiliate',
@@ -155,9 +159,13 @@ const SubmitAffiliate = async (event) => {
       currentDialog.value = 'success';
     }
   } catch (error) {
-    console.log('error', error);
+    console.log('error', error.response);
     loading.value = false;
-    isServerError.value = true;
+    if (Boolean(error?.response?._data?.info?.errors?.email)) {
+      isEmailError.value = true;
+    } else {
+      isServerError.value = true;
+    }
     return;
   }
 
@@ -172,6 +180,7 @@ const submitAdvertiser = async (event) => {
   }
   loading.value = true;
   isServerError.value = false;
+  isEmailError.value = false;
   try {
     const { status } = await $fetch('https://orion.scaletrk.com/signup/brand', {
       method: 'POST',
@@ -193,9 +202,13 @@ const submitAdvertiser = async (event) => {
       currentDialog.value = 'success';
     }
   } catch (error) {
-    console.log('error', error);
+    console.log('error', error.response);
     loading.value = false;
-    isServerError.value = true;
+    if (Boolean(error?.response?._data?.info?.errors?.email)) {
+      isEmailError.value = true;
+    } else {
+      isServerError.value = true;
+    }
     return;
   }
 
@@ -271,7 +284,7 @@ const submitAdvertiser = async (event) => {
             >{{ $t('dialog.auth.button') }}
           </v-btn>
           <div v-if="isServerError" class="dialog-form__error">
-            {{ $t('dialog.placeholders.error') }}
+            {{ $t('dialog.placeholders.loginError') }}
           </div>
           <div class="dialog-form__no-account">
             <span>{{ $t('dialog.auth.no-account') }}</span>
@@ -416,6 +429,9 @@ const submitAdvertiser = async (event) => {
           <div v-if="isServerError" class="dialog-form__error">
             {{ $t('dialog.placeholders.error') }}
           </div>
+          <div v-if="isEmailError" class="dialog-form__error">
+            {{ $t('dialog.placeholders.emailError') }}
+          </div>
           <div
             @click="currentDialog = 'auth'"
             class="dialog-form__already-registered"
@@ -539,6 +555,9 @@ const submitAdvertiser = async (event) => {
           </v-btn>
           <div v-if="isServerError" class="dialog-form__error">
             {{ $t('dialog.placeholders.error') }}
+          </div>
+          <div v-if="isEmailError" class="dialog-form__error">
+            {{ $t('dialog.placeholders.emailError') }}
           </div>
           <div
             @click="currentDialog = 'auth'"
