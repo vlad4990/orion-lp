@@ -66,9 +66,12 @@ const openAffiliateDialog = () => {
             </div>
           </div>
         </div>
-        <a @click="openAffiliateDialog" class="affiliates__link">{{
-          $t('affiliates.link')
-        }}</a>
+        <a
+          href="https://dashboard.orionpartners.pro/signup/affiliate"
+          target="_blank"
+          class="affiliates__link"
+          >{{ $t('affiliates.link') }}</a
+        >
         <div class="affiliates__description">
           {{ $t('affiliates.description') }}
         </div>

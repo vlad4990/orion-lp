@@ -21,8 +21,9 @@ const openAffiliateDialog = () => {
         <div class="choose-role__dot"></div>
         <div class="links">
           <a
-              @click="openAffiliateDialog"
-            class="affilate-link"
+              target="_blank"
+              href="https://dashboard.orionpartners.pro/signup/affiliate"
+              class="affilate-link"
           >
             <span class="button-text"  v-html="$t('role.affiliate')"></span>
             <svg
@@ -42,8 +43,9 @@ const openAffiliateDialog = () => {
             </svg>
           </a>
           <a
-            @click="openAdvertiserDialog"
-            class="advertiser-link"
+              target="_blank"
+              href="https://dashboard.orionpartners.pro/signup/brand"
+              class="advertiser-link"
           >
             <span class="button-text" v-html="$t('role.advertiser')"></span>
             <svg

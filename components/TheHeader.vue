@@ -65,15 +65,20 @@ const openAffiliateDialog = () => {
         </li>
       </ul>
       <div class="header__btns header__btns--desktop">
-        <button @click="openAuthDialog" class="header__btn header__btn--auth">
+        <NuxtLink
+          target="_blank"
+          to="https://dashboard.orionpartners.pro/login"
+          class="header__btn header__btn--auth"
+        >
           {{ $t('header.buttons.auth') }}
-        </button>
-        <button
-          @click="openAffiliateDialog"
+        </NuxtLink>
+        <NuxtLink
+          target="_blank"
+          to="https://dashboard.orionpartners.pro/signup/affiliate"
           class="header__btn header__btn--registration"
         >
           {{ $t('header.buttons.registration') }}
-        </button>
+        </NuxtLink>
         <button
           @click="isMenuOpened = !isMenuOpened"
           class="header__btn header__btn--menu"
@@ -91,18 +96,20 @@ const openAffiliateDialog = () => {
       <div class="header__expand" v-if="isMenuOpened">
         <div class="container">
           <div class="header__btns header__btns--mobile">
-            <button
+            <NuxtLink
+              target="_blank"
+              to="https://dashboard.orionpartners.pro/login"
               class="header__btn header__btn--big header__btn--auth"
-              @click="openAuthDialog"
             >
               {{ $t('header.buttons.auth') }}
-            </button>
-            <button
+            </NuxtLink>
+            <NuxtLink
+              target="_blank"
+              to="https://dashboard.orionpartners.pro/signup/affiliate"
               class="header__btn header__btn--big header__btn--registration"
-              @click="openAffiliateDialog"
             >
               {{ $t('header.buttons.registration') }}
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

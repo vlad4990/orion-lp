@@ -16,7 +16,12 @@ const openAffiliateDialog = () => {
 </script>
 
 <template>
-  <a @click="openAffiliateDialog" class="items-wrap" :class="{ pink }">
+  <a
+    target="_blank"
+    href="https://dashboard.orionpartners.pro/signup/affiliate"
+    class="items-wrap"
+    :class="{ pink }"
+  >
     <div class="items marquee">
       <template v-for="key in 10" :key="'first-' + key">
         <div class="item">Register now!</div>

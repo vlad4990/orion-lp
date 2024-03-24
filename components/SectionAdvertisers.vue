@@ -66,9 +66,12 @@ const openAdvertiserDialog = () => {
             </div>
           </div>
         </div>
-        <a @click="openAdvertiserDialog" class="advertisers__link">{{
-          $t('advertisers.link')
-        }}</a>
+        <a
+          target="_blank"
+          href="https://dashboard.orionpartners.pro/signup/brand"
+          class="advertisers__link"
+          >{{ $t('advertisers.link') }}</a
+        >
         <div class="advertisers__description">
           {{ $t('advertisers.description') }}
         </div>
