@@ -1,7 +1,6 @@
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 export default defineNuxtConfig({
   app: {
-    baseURL: '/orion-lp/',
     head: {
       script: [
         {
